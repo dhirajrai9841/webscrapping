@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='style.bootstrap.min.css')}}">
+        
+        
+        
+            
+        
+        <style>
+            body{
+                background-color:black;
+            }
+            .logo{
+                text-align: center;
+            }
+            #sub{
+                text-align: center;
+                background-color: antiquewhite;
+                transform: translate(650px,250px );
+            }
+                
+                
+            
+    
+                
+            
+            .imdb{
+                text-align: center;
+                background-color: antiquewhite;
+                transform: translate(650px,250px );
+            }
+        
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="logo">
+            <img src="{{url_for('static',filename = 'photo.png')}}" width="90px" height="100px">
+        </div>
+        <div class="search">
+           <form action="/success" method="post">
+               <input type="text" name="numberOfmovies" placeholder="enter number of movies" class="imdb">
+               <input id="sub" type="submit"/> 
+               
+              
+            </form>
+
+        </div>
+           
+
+       
+       
+        
+        
+        
+    </body>
+</html>

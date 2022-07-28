@@ -1,0 +1,76 @@
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="webstyle.css">
+       
+        
+        <style>
+            
+            #details{
+                text-align: left;
+                margin:10px;
+                padding:20px;
+                border:2px solid;
+            }
+            .logo{
+                align-items: center;
+            }
+            h5{
+                text-align: center;
+            }
+            .pic{
+                transform: translate(950px);
+            }
+        </style>
+
+        
+
+    </head>
+    <body >
+        <div class="pic">
+           
+            <img      src = "{{ url_for('static', filename = 'photo.png') }}" width="100px" height="150px"><br>
+            <button class="test"><b> IMDB</b></button> 
+
+            
+        </div>
+        <h5>Number of movies loaded: {{movieNo}}</h5>
+        {% for i in parsedMovieList.findAll('div', class_="lister-item mode-advanced"): %}
+        <div class="container" id="details">
+            <div class="banner">
+               
+                <img src="{{i.find('img',class_='loadlate').get('loadlate')}}" width="90px" height="100px">
+
+                
+            </div>   
+            
+           
+        
+        {{ i.h3.a.text.strip()}}<br> 
+        {{i.find('span', attrs={'class':'certificate'}).text}}|{{i.find('span',class="runtime").text}}<br>
+        {{i.find('span',class="genre").text.strip()}}<br> 
+        &#11088 {{i.strong.text}} &nbsp;&nbsp;&nbsp;&nbsp; &#10032 &nbsp;Rate This &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;
+
+        {{i.find('div', class="inline-block rating-metascore").text}}
+        <br>
+        {{i.findAll('p',class="text-muted")[1].text}}<br>
+
+        
+        {{i.find('p',class='').text}}<br>
+        
+        {{i.find('p',class="sort-num_votes-visible").text}}
+
+       
+
+       
+
+          
+        </div>
+{%endfor%}
+
+
+
+
+    </body>
+</html>

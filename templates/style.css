@@ -1,0 +1,45 @@
+body{
+    
+    background-color: white;
+    
+}
+.test{
+    
+    border-radius: 20%;
+    transform:translate(900px);
+   background-color: orange;
+   height:90px;
+   width:200px;
+
+   
+    
+   
+
+}
+.imdb{
+    text-align: center;
+    
+    
+    transform:translate(50px,400px)
+
+}
+img{
+    width:200px;
+    height:300px;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
